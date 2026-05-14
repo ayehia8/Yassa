@@ -57,12 +57,12 @@ const MSGS = [
 
 /** Favorite things about us */
 const FAVORITES = [
-  { icon: '💬', title: 'Our late-night talks', text: 'When the world sleeps and it is just us, whispering about everything and nothing.' },
-  { icon: '😂', title: 'The way we laugh', text: 'The kind of laughter that makes my stomach hurt and my heart so full.' },
-  { icon: '🤝', title: 'How we understand each other', text: 'Sometimes words are not even needed. You just know.' },
-  { icon: '🌧️', title: 'Our quiet moments', text: 'Silence with you is never empty — it is the most peaceful place I know.' },
-  { icon: '🔥', title: 'How we push each other', text: 'You make me want to be better. Not for you — but because of you.' },
-  { icon: '🏠', title: 'The feeling of us', text: 'Being with you feels like coming home after the longest journey.' },
+  { icon: '💬', title: 'Our comfort', text: 'The way we are comfortable together beyond limits, how we can do absolutely everything together and be ourselves.' },
+  { icon: '😂', title: 'Our happiness', text: 'The way we are always able to make each other the happiest possible even in the toughest of times.' },
+  { icon: '🤝', title: 'How we fit', text: 'How we understand each other, the way we simply perfectly fit together like puzzle pieces.' },
+  { icon: '🔥', title: 'How we grow', text: 'How we push each other, the way we always bring out the best of each other.' },
+  { icon: '🌧️', title: 'Our quiet moments', text: 'Our quiet moments, how we can just be there, together, quietly, yet our love always loud.' },
+  { icon: '🏠', title: 'The feeling of us', text: 'The feeling of us, just everything about being together, how everything feels at best when we are around each other.' },
 ];
 
 /** Dream future timeline */

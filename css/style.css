@@ -1665,6 +1665,14 @@ body.page-ready .hero {
   margin-top: 2rem;
 }
 
+.fav-card {
+  height: clamp(260px, 32vw, 320px);
+}
+
+.fav-card .cback {
+  padding: 2rem;
+}
+
 .fav-item {
   padding: 1.8rem;
   border-radius: 6px;

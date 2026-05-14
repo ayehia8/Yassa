@@ -103,15 +103,43 @@ function buildFavorites() {
 
   FAVORITES.forEach((f, i) => {
     const card = document.createElement('div');
-    card.className = `fav-item glass-card rev ${delays[i]}`;
+    const number = String(i + 1).padStart(2, '0');
+    card.className = `cw fav-card rev ${delays[i]}`;
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Reveal favorite ${number}`);
+
     card.innerHTML = `
-      <span class="fav-icon">${f.icon}</span>
-      <h3 class="fav-title">${f.title}</h3>
-      <p class="fav-text">${f.text}</p>`;
-    card.addEventListener('mouseenter', () => {
+      <div class="ci">
+        <div class="cf cfront glass-card">
+          <div class="card-shimmer"></div>
+          <div class="rnum">${number}</div>
+        </div>
+        <div class="cf cback glass-card">
+          <div class="card-shimmer"></div>
+          <span class="fav-icon">${f.icon}</span>
+          <h3 class="fav-title">${f.title}</h3>
+          <p class="fav-text">${f.text}</p>
+        </div>
+      </div>`;
+
+    const flipCard = () => {
+      card.classList.toggle('flipped');
       const rc = card.getBoundingClientRect();
-      burst(rc.left + rc.width / 2, rc.top + rc.height / 2, 6);
+      burst(rc.left + rc.width / 2, rc.top + rc.height / 2, 16);
+      fw(rc.left + rc.width / 2, rc.top + rc.height / 2, 24);
+      card.setAttribute('aria-label', card.classList.contains('flipped') ? `Hide favorite ${number}` : `Reveal favorite ${number}`);
+    };
+
+    card.addEventListener('click', flipCard);
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        flipCard();
+      }
     });
+
     grid.appendChild(card);
   });
 }
