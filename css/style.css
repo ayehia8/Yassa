@@ -311,7 +311,7 @@ body::after {
   font-family: 'Pinyon Script', cursive;
   font-size: clamp(5rem, 20vw, 15rem);
   color: var(--blush);
-  line-height: .85;
+  line-height: 1.2;
   display: inline-block;
   transform-style: preserve-3d;
   transition: transform .06s linear;
@@ -429,7 +429,7 @@ section h2 {
   font-size: clamp(2.8rem, 7.5vw, 5rem);
   color: var(--blush);
   margin-bottom: 1.8rem;
-  line-height: 1;
+  line-height: 1.4;
 }
 
 section p {
@@ -469,7 +469,7 @@ section p strong {
   font-size: 6rem;
   color: var(--rose);
   opacity: .18;
-  line-height: 1;
+  line-height: 1.2;
   pointer-events: none;
 }
 
@@ -607,7 +607,7 @@ section p strong {
   font-family: 'Pinyon Script', cursive;
   font-size: clamp(1.7rem, 5vw, 2.7rem);
   color: var(--blush);
-  line-height: 1.35;
+  line-height: 1.5;
   margin-bottom: 2rem;
 }
 
@@ -731,7 +731,7 @@ section p strong {
   font-family: 'Pinyon Script', cursive;
   font-size: 3rem;
   color: rgba(192, 65, 90, .26);
-  line-height: .9;
+  line-height: 1.2;
   margin-bottom: .4rem;
 }
 
