@@ -118,7 +118,7 @@ function runFW() {
 /* ── FLOATING HEART EMOJIS ── */
 function initFloatingHearts() {
   const wrap = document.getElementById('fhwrap');
-  ['♥','♡','❤','💕','💗','💖'].forEach(emoji => {
+  ['♥','♡','❤','💕','💗','💖','💘'].forEach(emoji => {
     for (let j = 0; j < 4; j++) {
       const el = document.createElement('div'); el.className = 'fh'; el.textContent = emoji;
       el.style.cssText =

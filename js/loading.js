@@ -16,7 +16,7 @@ function initLoadingScreen() {
       
       const text = loader.querySelector('.loader-text');
       if (text) {
-        text.textContent = "tap to enter ♡";
+        text.textContent = "tap to enter 💘";
         text.style.cursor = "pointer";
       }
       loader.style.cursor = "pointer";
