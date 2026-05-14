@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Memories — For Ela ♡</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Josefin+Sans:wght@100;200;300&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@200;300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
   <style>
     /* ── PAGE-SPECIFIC STYLES ── */
@@ -63,6 +63,64 @@
     }
     .tl-text { font-size: .95rem; color: #ddc0c8; line-height: 1.8; }
 
+    .image-timeline {
+      max-width: 1080px;
+      padding-top: 4rem;
+    }
+    .memory-shot {
+      position: relative; width: 50%; margin: 0 0 2.4rem; display: flex;
+    }
+    .memory-shot:nth-child(odd) { justify-content: flex-end; padding-right: 2.4rem; }
+    .memory-shot:nth-child(even) { justify-content: flex-start; margin-left: 50%; padding-left: 2.4rem; }
+    .memory-shot::before {
+      content: ''; position: absolute; top: 50%; width: .82rem; height: .82rem;
+      border-radius: 50%; background: var(--blush); box-shadow: 0 0 22px rgba(192,65,90,.9);
+      transform: translateY(-50%); z-index: 2;
+    }
+    .memory-shot:nth-child(odd)::before { right: -.41rem; }
+    .memory-shot:nth-child(even)::before { left: -.41rem; }
+    .memory-shot img {
+      width: min(100%, 420px); max-height: 560px; display: block; object-fit: cover;
+      border-radius: 24px; border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 24px 80px rgba(0,0,0,.34), 0 0 32px rgba(192,65,90,.12);
+      transition: transform .55s ease, filter .55s ease, box-shadow .55s ease;
+    }
+    .memory-shot:hover img {
+      transform: scale(1.035); filter: brightness(1.07);
+      box-shadow: 0 30px 95px rgba(0,0,0,.4), 0 0 44px rgba(216,181,111,.14);
+    }
+
+    .memory-gallery {
+      position: relative; z-index: 1; max-width: 1100px; margin: 0 auto;
+      padding: 2rem clamp(1rem, 4vw, 3rem) 4rem; text-align: center;
+    }
+    .memory-gallery h2 {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(2.8rem, 8vw, 5.5rem); color: var(--blush);
+      line-height: 1.25; margin-bottom: 2rem;
+      text-shadow: 0 0 46px rgba(192,65,90,.44);
+    }
+    .memory-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+      gap: 1.2rem;
+    }
+    .memory-photo {
+      position: relative; overflow: hidden; border-radius: 22px; margin: 0;
+      aspect-ratio: 4 / 5; background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.14); box-shadow: 0 22px 70px rgba(0,0,0,.26);
+    }
+    .memory-photo img {
+      width: 100%; height: 100%; display: block; object-fit: cover;
+      transition: transform .55s ease, filter .55s ease;
+    }
+    .memory-photo:hover img { transform: scale(1.06); filter: brightness(1.08); }
+    .memory-photo figcaption {
+      position: absolute; left: .85rem; top: .75rem;
+      font-family: 'Pinyon Script', cursive; font-size: 2.2rem; line-height: 1;
+      color: var(--blush); text-shadow: 0 0 20px rgba(192,65,90,.85);
+      pointer-events: none;
+    }
+
     .back-link {
       display: block; text-align: center; margin: 3rem auto;
       font-family: 'Josefin Sans', sans-serif; font-weight: 100;
@@ -80,6 +138,16 @@
       .tl-item:nth-child(odd) .tl-content { align-items: flex-start; }
       .tl-dot { left: 1.1rem; }
       .tl-content { max-width: 100%; padding-left: 3rem; }
+      .memory-grid { grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); }
+      .image-timeline::before { left: 1.1rem; }
+      .memory-shot,
+      .memory-shot:nth-child(even),
+      .memory-shot:nth-child(odd) {
+        width: 100%; margin-left: 0; padding-left: 3rem; padding-right: 0; justify-content: flex-start;
+      }
+      .memory-shot:nth-child(odd)::before,
+      .memory-shot:nth-child(even)::before { left: .69rem; right: auto; }
+      .memory-shot img { width: 100%; max-height: none; }
     }
   </style>
 </head>
@@ -106,74 +174,31 @@
   <p>Every moment with you becomes a memory I want to keep forever.</p>
 </div>
 
-<div class="gline-animated rev"><span class="div-heart">♥</span></div>
-
-<div class="timeline">
-  <div class="tl-item rev">
-    <div class="tl-dot">💫</div>
-    <div class="tl-content">
-      <span class="tl-date">The beginning</span>
-      <h3 class="tl-title">When I first saw you</h3>
-      <p class="tl-text">My heart did something it had never done before. It recognised you — before my mind even had a chance to catch up.</p>
-    </div>
-  </div>
-
-  <div class="tl-item rev d1">
-    <div class="tl-dot">💬</div>
-    <div class="tl-content">
-      <span class="tl-date">Our first conversation</span>
-      <h3 class="tl-title">Words that changed everything</h3>
-      <p class="tl-text">I remember thinking: I could talk to this person forever. And here I am, still wanting to.</p>
-    </div>
-  </div>
-
-  <div class="tl-item rev d2">
-    <div class="tl-dot">😂</div>
-    <div class="tl-content">
-      <span class="tl-date">That moment</span>
-      <h3 class="tl-title">When you first laughed with me</h3>
-      <p class="tl-text">The sound of your laughter became my favourite thing. I knew right then I would spend my life trying to hear it again.</p>
-    </div>
-  </div>
-
-  <div class="tl-item rev d3">
-    <div class="tl-dot">🌙</div>
-    <div class="tl-content">
-      <span class="tl-date">Late nights</span>
-      <h3 class="tl-title">Talking until sunrise</h3>
-      <p class="tl-text">Those nights when we lost track of time, when the world was asleep and it was just us — those are the hours I treasure most.</p>
-    </div>
-  </div>
-
-  <div class="tl-item rev d1">
-    <div class="tl-dot">💕</div>
-    <div class="tl-content">
-      <span class="tl-date">The realisation</span>
-      <h3 class="tl-title">When I knew I loved you</h3>
-      <p class="tl-text">It was not one big moment. It was a thousand tiny ones that suddenly made sense all at once. And I thought: oh. It is you. It has always been you.</p>
-    </div>
-  </div>
-
-  <div class="tl-item rev d2">
-    <div class="tl-dot">🔥</div>
-    <div class="tl-content">
-      <span class="tl-date">Through everything</span>
-      <h3 class="tl-title">The hard days we survived</h3>
-      <p class="tl-text">We have been through storms. But we held on. And every hard day only proved that this love is stronger than anything.</p>
-    </div>
-  </div>
-
-  <div class="tl-item rev d3">
-    <div class="tl-dot">♥</div>
-    <div class="tl-content">
-      <span class="tl-date">Right now</span>
-      <h3 class="tl-title">This very moment</h3>
-      <p class="tl-text">I love you more today than I did yesterday. And tomorrow, I will love you even more. This is the memory we are making right now.</p>
-    </div>
-  </div>
+<div class="timeline image-timeline">
+  <figure class="memory-shot rev"><img src="1.jpg" alt="Memory 1" loading="lazy"></figure>
+  <figure class="memory-shot rev d1"><img src="2.jpg" alt="Memory 2" loading="lazy"></figure>
+  <figure class="memory-shot rev d2"><img src="3.jpg" alt="Memory 3" loading="lazy"></figure>
+  <figure class="memory-shot rev d3"><img src="4.jpg" alt="Memory 4" loading="lazy"></figure>
+  <figure class="memory-shot rev"><img src="5.jpg" alt="Memory 5" loading="lazy"></figure>
+  <figure class="memory-shot rev d1"><img src="6.jpg" alt="Memory 6" loading="lazy"></figure>
+  <figure class="memory-shot rev d2"><img src="7.png" alt="Memory 7" loading="lazy"></figure>
+  <figure class="memory-shot rev d3"><img src="8.png" alt="Memory 8" loading="lazy"></figure>
+  <figure class="memory-shot rev"><img src="9.jpg" alt="Memory 9" loading="lazy"></figure>
+  <figure class="memory-shot rev d1"><img src="10.jpg" alt="Memory 10" loading="lazy"></figure>
+  <figure class="memory-shot rev d2"><img src="11.jpg" alt="Memory 11" loading="lazy"></figure>
+  <figure class="memory-shot rev d3"><img src="12.png" alt="Memory 12" loading="lazy"></figure>
+  <figure class="memory-shot rev"><img src="13.png" alt="Memory 13" loading="lazy"></figure>
+  <figure class="memory-shot rev d1"><img src="14.png" alt="Memory 14" loading="lazy"></figure>
+  <figure class="memory-shot rev d2"><img src="15.jpg" alt="Memory 15" loading="lazy"></figure>
+  <figure class="memory-shot rev d3"><img src="16.jpg" alt="Memory 16" loading="lazy"></figure>
+  <figure class="memory-shot rev"><img src="17.jpg" alt="Memory 17" loading="lazy"></figure>
 </div>
 
-<a href="index.html" class="back-link">← Go back</a>
+<nav class="page-nav rev">
+  <div class="nav-links">
+    <a href="index.html" class="back-link">← Go back</a>
+  </div>
+</nav>
 
 <div class="final" style="padding-top: 3rem">
   <span class="fhearts">♥ &nbsp; ♥ &nbsp; ♥</span>
@@ -183,13 +208,13 @@
 <script src="js/audio.js"></script>
 <script src="js/effects.js"></script>
 <script src="js/starfield.js"></script>
+<script src="js/date-lock.js"></script>
 <script>
   initHeartCursor();
   initFireworks();
   initStarfield();
   initFloatingHearts();
   initProgressBar();
-  initAnimatedDividers();
 
   // Scroll reveal
   const io = new IntersectionObserver(entries => {
