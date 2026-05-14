@@ -432,6 +432,12 @@ section h2 {
   line-height: 1.4;
 }
 
+section h2.anniversary-title {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
 section p {
   font-size: clamp(1rem, 1.8vw, 1.2rem);
   font-weight: 300;
@@ -636,7 +642,7 @@ section p strong {
   position: fixed;
   pointer-events: none;
   z-index: 99999;
-  background: rgba(192, 65, 90, 0.85);
+  background: rgba(192, 52, 87, 0.85);
   color: var(--cream);
   padding: 0.5rem 1rem;
   border-radius: 20px;
