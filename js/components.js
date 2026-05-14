@@ -6,6 +6,14 @@
 function buildReasonCards() {
   const grid = document.getElementById('rgrid');
   const delays = ['d1', 'd2', 'd3', 'd1', 'd2', 'd3'];
+  const cardMessages = [
+    "I love this about you ❤️",
+    "So true ✨",
+    "My favourite reason 💕",
+    "You are amazing 💖",
+    "Always & forever 💗",
+    "You're the best 💝"
+  ];
 
   REASONS.forEach((r, i) => {
     const card = document.createElement('div');
@@ -25,11 +33,22 @@ function buildReasonCards() {
         </div>
       </div>`;
 
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
       card.classList.toggle('flipped');
       const rect = card.getBoundingClientRect();
       burst(rect.left + rect.width / 2, rect.top + rect.height / 2, 16);
       fw(rect.left + rect.width / 2, rect.top + rect.height / 2, 24);
+
+      if (card.classList.contains('flipped')) {
+        const msg = document.createElement('div');
+        msg.className = 'floating-msg';
+        msg.textContent = cardMessages[i % cardMessages.length];
+        msg.style.left = e.clientX + 'px';
+        msg.style.top = e.clientY + 'px';
+        document.body.appendChild(msg);
+
+        setTimeout(() => msg.remove(), 2000);
+      }
     });
 
     card.addEventListener('mousemove', (e) => {

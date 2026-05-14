@@ -631,6 +631,44 @@ section p strong {
   background: rgba(192, 65, 90, .38);
 }
 
+/* ── 14. FLOATING MESSAGE ── */
+.floating-msg {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  background: rgba(192, 65, 90, 0.85);
+  color: var(--cream);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  animation: floatMsg 2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes floatMsg {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px) scale(0.8);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -10px) scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: translate(-50%, -30px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -40px) scale(0.9);
+  }
+}
+
 /* ── 11. 3D FLIP CARDS ── */
 .reasons {
   display: grid;
