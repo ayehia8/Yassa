@@ -17,13 +17,11 @@ function buildReasonCards() {
           <div class="card-shimmer"></div>
           <div class="rnum">${r.n}</div>
           <div class="rtit">${r.t}</div>
-          <div class="rtxt">${r.f}</div>
-          <span class="fhint">tap to reveal ♡</span>
+          <span class="fhint" style="margin-top:auto">tap to reveal ♡</span>
         </div>
-        <div class="cf cback glass-card">
+        <div class="cf cback glass-card" style="justify-content:center; align-items:flex-start">
           <div class="card-shimmer"></div>
-          <div class="rbicon">♥</div>
-          <div class="rbtxt">${r.b}</div>
+          <div class="rbtxt" style="text-align:left"><strong style="color:var(--blush);font-size:1.05rem">${r.f}</strong><br><br>${r.b}</div>
         </div>
       </div>`;
 
@@ -37,15 +35,15 @@ function buildReasonCards() {
     card.addEventListener('mousemove', (e) => {
       if (card.classList.contains('flipped')) return;
       const rc = card.getBoundingClientRect();
-      const x = (e.clientX - rc.left) / rc.width  - .5;
-      const y = (e.clientY - rc.top)  / rc.height - .5;
+      const x = (e.clientX - rc.left) / rc.width - .5;
+      const y = (e.clientY - rc.top) / rc.height - .5;
       card.querySelector('.ci').style.transform =
         `perspective(1200px) rotateY(${x * 24}deg) rotateX(${-y * 16}deg)`;
       // Move shimmer
       const shimmer = card.querySelector('.cfront .card-shimmer');
       if (shimmer) {
         shimmer.style.background =
-          `radial-gradient(circle at ${(x+.5)*100}% ${(y+.5)*100}%, rgba(212,168,83,.15), transparent 60%)`;
+          `radial-gradient(circle at ${(x + .5) * 100}% ${(y + .5) * 100}%, rgba(212,168,83,.15), transparent 60%)`;
       }
     });
 
@@ -89,8 +87,8 @@ function buildPromiseList() {
 /* ── ENVELOPE ── */
 function initEnvelope() {
   const envwrap = document.getElementById('envwrap');
-  const env     = document.getElementById('env');
-  const ehint   = document.getElementById('ehint');
+  const env = document.getElementById('env');
+  const ehint = document.getElementById('ehint');
   let isOpen = false;
 
   envwrap.addEventListener('click', () => {
@@ -112,7 +110,7 @@ function initEnvelope() {
 function buildFavorites() {
   const grid = document.getElementById('favgrid');
   if (!grid) return;
-  const delays = ['d1','d2','d3','d1','d2','d3'];
+  const delays = ['d1', 'd2', 'd3', 'd1', 'd2', 'd3'];
 
   FAVORITES.forEach((f, i) => {
     const card = document.createElement('div');

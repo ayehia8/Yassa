@@ -53,117 +53,6 @@ function initScrollReveal() {
   document.querySelectorAll('.rev').forEach(el => observer.observe(el));
 }
 
-/* ── SOUND TOGGLE ── */
-function initSoundToggle() {
-  const btn = document.getElementById('sound-toggle');
-  const bgmusic = document.getElementById('bgmusic');
-  
-  if (!btn || !bgmusic) {
-    console.error('Sound toggle or audio element not found');
-    return;
-  }
-
-  console.log('Sound toggle initialized');
-  let isPlaying = false;
-
-  function updateButton() {
-    console.log('Updating button - isPlaying:', isPlaying);
-    btn.textContent = isPlaying ? '♫' : '♪';
-    if (isPlaying) {
-      btn.classList.add('sound-on');
-    } else {
-      btn.classList.remove('sound-on');
-    }
-  }
-
-  // Auto-loop on end
-  bgmusic.addEventListener('ended', () => {
-    console.log('Audio ended, restarting');
-    bgmusic.currentTime = 0;
-    bgmusic.play().catch(err => console.error('Replay error:', err));
-  });
-
-  // Log errors
-  bgmusic.addEventListener('error', (e) => {
-    console.error('Audio error:', bgmusic.error?.message, 'Code:', bgmusic.error?.code);
-  });
-
-  // Button click: toggle play/pause
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    console.log('Button clicked - isPlaying:', isPlaying);
-    
-    if (!isPlaying) {
-      bgmusic.muted = false;
-      bgmusic.volume = 1;
-      console.log('Attempting to play audio');
-      bgmusic.play().then(() => {
-        isPlaying = true;
-        updateButton();
-        console.log('Play succeeded');
-      }).catch(err => {
-        console.error('Play failed:', err.name, err.message);
-        isPlaying = false;
-        updateButton();
-      });
-    } else {
-      console.log('Pausing audio');
-      bgmusic.pause();
-      isPlaying = false;
-      updateButton();
-    }
-  });
-
-  // Autoplay on page load
-  function tryPlay() {
-    console.log('tryPlay called - isPlaying:', isPlaying);
-    if (isPlaying) return;
-    bgmusic.muted = false;
-    bgmusic.volume = 1;
-    bgmusic.play().then(() => {
-      isPlaying = true;
-      updateButton();
-      console.log('Autoplay succeeded');
-    }).catch(err => {
-      console.log('Autoplay blocked:', err.name);
-      // One-time listener for user engagement
-      const engage = () => {
-        console.log('User engagement detected, attempting play');
-        bgmusic.muted = false;
-        bgmusic.volume = 1;
-        bgmusic.play().then(() => {
-          isPlaying = true;
-          updateButton();
-        }).catch(e => console.error('Play on engage failed:', e));
-        document.removeEventListener('click', engage);
-        document.removeEventListener('scroll', engage);
-      };
-      document.addEventListener('click', engage, { once: true });
-      document.addEventListener('scroll', engage, { once: true });
-    });
-  }
-
-  // Trigger autoplay
-  console.log('Document readyState:', document.readyState);
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('DOMContentLoaded - scheduling tryPlay');
-      setTimeout(tryPlay, 800);
-    });
-  } else {
-    console.log('DOM already loaded - scheduling tryPlay');
-    setTimeout(tryPlay, 800);
-  }
-
-  window.addEventListener('load', () => {
-    console.log('Window load event - scheduling tryPlay');
-    setTimeout(tryPlay, 800);
-  });
-
-  // Initialize button
-  updateButton();
-}
 
 function playHeartbeat(ctx) {
   function beat() {
@@ -241,7 +130,6 @@ function init() {
   initParallax();
   initScrollReveal();
   initTypewriter();
-  initSoundToggle();
   initMagneticHover();
   initAnimatedDividers();
 }
