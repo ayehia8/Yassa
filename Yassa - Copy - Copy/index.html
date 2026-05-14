@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Ela — My Everything ♡</title>
+  <meta name="description" content="A love letter written with every heartbeat — for Ela, from Yassa."/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ═══ LOADING SCREEN ═══ -->
+<div class="loader-screen" id="loader">
+  <div class="loader-heart">
+    <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 85C50 85 5 52 5 28C5 13 16 3 29 3C38 3 46 8 50 16C54 8 62 3 71 3C84 3 95 13 95 28C95 52 50 85 50 85Z"/>
+    </svg>
+  </div>
+  <span class="loader-text">opening my heart for you</span>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- ═══ SCROLL PROGRESS ═══ -->
+<div class="scroll-progress">
+  <div class="scroll-progress-fill" id="scroll-progress-fill"></div>
+  <span class="scroll-heart" id="scroll-heart">♥</span>
+</div>
+
+<!-- ═══ SOUND TOGGLE ═══ -->
+<button class="sound-toggle" id="sound-toggle" aria-label="Toggle sound">♪</button>
+
+<!-- ═══ AUDIO ═══ -->
+<audio id="bgmusic" loop preload="auto">
+  <source src="bgmusic.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- ═══ HEART CURSOR ═══ -->
+<div id="hcur">
+  <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 85C50 85 5 52 5 28C5 13 16 3 29 3C38 3 46 8 50 16C54 8 62 3 71 3C84 3 95 13 95 28C95 52 50 85 50 85Z" fill="#c0415a"/>
+  </svg>
+</div>
+
+<!-- ═══ CANVASES ═══ -->
+<canvas id="bgc"></canvas>
+<canvas id="fwc"></canvas>
+<div class="fhwrap" id="fhwrap"></div>
+
+<!-- ═══ MODAL ═══ -->
+<div class="overlay" id="overlay">
+  <div class="mbox">
+    <span class="mhearts">♥ ♥ ♥</span>
+    <div class="mtxt" id="mtxt"></div>
+    <button class="mclose" id="mclose">close ♡</button>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="ring ring-1"></div>
+  <div class="ring ring-2"></div>
+  <div class="ring ring-3"></div>
+  <canvas id="heart3d"></canvas>
+  <span class="from-label">from Yassa, with every heartbeat, to</span>
+  <div class="name-wrap">
+    <span class="hero-name" id="hname">Ela</span>
+  </div>
+  <p class="hero-tagline">You are not just the love of my life —<br>you are the <em>life</em> of my love.</p>
+  <span class="hero-sub">always &nbsp;·&nbsp; hopelessly &nbsp;·&nbsp; forever</span>
+  <div class="shint"><span>scroll</span><div class="sline"></div></div>
+</div>
+
+<div class="gline-animated rev"><span class="div-heart">♥</span></div>
+
+<!-- ═══ LETTER ═══ -->
+<section class="parallax-section">
+  <span class="tag rev">A letter from my heart</span>
+  <h2 class="rev">My dearest Ela</h2>
+  <div class="letter rev">
+    <p>There are moments when words feel too small for what the heart is trying to say. This is one of those moments. Because no sentence I could ever write will be enough to describe how deeply, how completely, how <em>hopelessly</em> I love you.</p>
+    <p>You walked into my world and quietly rearranged everything — the way the morning feels, the way a song sounds, the way I see myself. You made me realise that love is not just a feeling; it is a <em>place</em>. And that place is wherever you are.</p>
+    <p>I do not love you because you are perfect. I love you because <strong>you are perfectly, beautifully, wonderfully you</strong> — and to me, there is nothing more extraordinary in this entire universe.</p>
+  </div>
+</section>
+
+<div class="gline-animated rev"><span class="div-heart">✦</span></div>
+
+<!-- ═══ TAP MY HEART ═══ -->
+<div class="tap-sec rev">
+  <span class="sub">press my heart</span>
+  <button class="bhbtn" id="bh" aria-label="Press for a love message">
+    <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hg" cx="45%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="#e86080"/>
+          <stop offset="100%" stop-color="#8b1a30"/>
+        </radialGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <path d="M50 85C50 85 5 52 5 28C5 13 16 3 29 3C38 3 46 8 50 16C54 8 62 3 71 3C84 3 95 13 95 28C95 52 50 85 50 85Z" fill="url(#hg)" filter="url(#glow)"/>
+    </svg>
+  </button>
+  <span class="tap-hint">tap me ♡</span>
+</div>
+
+<div class="gline-animated rev"><span class="div-heart">♥</span></div>
+
+<!-- ═══ POEM ═══ -->
+<div class="poem parallax-section">
+  <span class="pl rev">When I am with you, time forgets to move.</span>
+  <span class="pl rev d1">When I am without you, every second knows your name.</span>
+  <span class="pl hi rev d2">You are the poem I never knew how to write</span>
+  <span class="pl hi rev d3">and the answer to a question my heart always asked.</span>
+</div>
+
+<span class="hbd">♥</span>
+
+<!-- ═══ FLIP CARDS ═══ -->
+<section class="parallax-section">
+  <span class="tag rev">The reasons</span>
+  <h2 class="rev">Why I love you</h2>
+  <p class="rev">Tap each card to discover what's inside ✨</p>
+  <div class="reasons" id="rgrid"></div>
+</section>
+
+<!-- ═══ QUOTE ═══ -->
+<div style="position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 clamp(1.2rem,5vw,3rem)">
+  <div class="quote rev">
+    <p>"I am so in love with you that there is nothing else of consequence in the world."</p>
+    <cite>— Ernest Hemingway</cite>
+  </div>
+</div>
+
+<div class="gline-animated rev"><span class="div-heart">✦</span></div>
+
+<!-- ═══ OUR SONG ═══ -->
+<section class="parallax-section">
+  <span class="tag rev">Our melody</span>
+  <h2 class="rev">Our Song</h2>
+  <div class="song-card glass-card rev">
+    <div class="cd-wrap">
+      <div class="cd"></div>
+    </div>
+    <div class="song-info">
+      <p class="song-title">Every love song I hear</p>
+      <p class="song-artist">reminds me of you</p>
+      <p class="song-note">Because you are the melody my heart plays on repeat. Every lyric makes sense now that I have you. You turned music into something I can feel.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gline-animated rev"><span class="div-heart">♫</span></div>
+
+<!-- ═══ FAVORITE THINGS ABOUT US ═══ -->
+<section class="parallax-section">
+  <span class="tag rev">You & me</span>
+  <h2 class="rev">Things I love about us</h2>
+  <div class="fav-grid" id="favgrid"></div>
+</section>
+
+<div class="gline-animated rev"><span class="div-heart">✦</span></div>
+
+<!-- ═══ PROMISES ═══ -->
+<section class="parallax-section">
+  <span class="tag rev">My promises</span>
+  <h2 class="rev">What I give you — forever</h2>
+  <p class="rev">Tap each heart to seal my promise to you 💕</p>
+  <ul class="promises" id="plist"></ul>
+</section>
+
+<div class="gline-animated rev"><span class="div-heart">♥</span></div>
+
+<!-- ═══ DREAM FUTURE ═══ -->
+<section class="parallax-section">
+  <span class="tag rev">Our tomorrow</span>
+  <h2 class="rev">Dreams I have for us</h2>
+  <div class="dreams-timeline" id="dreamlist"></div>
+</section>
+
+<div class="gline-animated rev"><span class="div-heart">✦</span></div>
+
+<!-- ═══ ENVELOPE ═══ -->
+<div class="envsec">
+  <span class="tag rev" style="text-align:center;display:block">A secret message</span>
+  <h2 class="rev" style="text-align:center;font-family:'Pinyon Script',cursive;font-size:clamp(2.5rem,7vw,4.5rem);color:var(--blush);margin-bottom:0">Open my heart</h2>
+  <div class="envwrap rev" id="envwrap">
+    <div class="env" id="env">
+      <div class="envbody">
+        <div class="eflap">
+          <svg viewBox="0 0 360 210" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="0,0 360,0 180,125" fill="rgba(192,65,90,.22)" stroke="rgba(192,65,90,.38)" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <svg class="etri" viewBox="0 0 360 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="0,0 0,220 180,125" fill="rgba(192,65,90,.1)" stroke="rgba(192,65,90,.18)" stroke-width="1"/>
+          <polygon points="360,0 360,220 180,125" fill="rgba(192,65,90,.1)" stroke="rgba(192,65,90,.18)" stroke-width="1"/>
+          <polygon points="0,220 360,220 180,125" fill="rgba(192,65,90,.15)" stroke="rgba(192,65,90,.18)" stroke-width="1"/>
+        </svg>
+        <div class="eletter">
+          <p>You are the greatest gift my life has ever known.<br>Thank you for choosing me. ♥<br><br>— Yassa</p>
+        </div>
+      </div>
+    </div>
+    <span class="ehint" id="ehint">tap to open</span>
+  </div>
+</div>
+
+<!-- ═══ SECOND QUOTE ═══ -->
+<div style="position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 clamp(1.2rem,5vw,3rem)">
+  <div class="quote rev">
+    <p>"Whatever our souls are made of, his and mine are the same."</p>
+    <cite>— Emily Brontë</cite>
+  </div>
+</div>
+
+<!-- ═══ CLOSING POEM ═══ -->
+<div class="poem parallax-section" style="padding-bottom:1rem">
+  <span class="pl rev">If I searched every corner of every universe,</span>
+  <span class="pl rev d1">across every star and every sea,</span>
+  <span class="pl rev d2">I would still choose you.</span>
+  <span class="pl hi rev d3">Not because there is no one else —</span>
+  <span class="pl hi rev d4">but because there is no one else like you.</span>
+</div>
+
+<!-- ═══ PAGE NAVIGATION ═══ -->
+<nav class="page-nav rev">
+  <span class="tag" style="text-align:center;display:block;margin-bottom:1.5rem">there is more to explore</span>
+  <div class="nav-links">
+    <a href="memories.html" class="nav-card">
+      <span class="nav-icon">📸</span>
+      <span class="nav-title">Our Memories</span>
+      <span class="nav-desc">A timeline of us</span>
+    </a>
+    <a href="forever.html" class="nav-card">
+      <span class="nav-icon">🌙</span>
+      <span class="nav-title">Forever & Always</span>
+      <span class="nav-desc">My vows to you</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ FINAL ═══ -->
+<div class="final">
+  <span class="flabel rev">written with every single beat of his heart</span>
+  <span class="sig rev">Yassa</span>
+  <div class="infinity-wrap rev">
+    <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 15C15 15 5 5 5 15C5 25 15 25 15 15C15 15 25 5 35 15M45 15C45 15 55 25 55 15C55 5 45 5 45 15C45 15 35 25 25 15" />
+    </svg>
+  </div>
+  <p class="fnote rev">Yours — completely, endlessly, joyfully. Always.</p>
+  <span class="fhearts">♥ &nbsp; ♥ &nbsp; ♥</span>
+</div>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script src="js/data.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/components.js"></script>
+<script src="js/heart3d.js"></script>
+<script src="js/loading.js"></script>
+<script src="js/starfield.js"></script>
+<script src="js/typewriter.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

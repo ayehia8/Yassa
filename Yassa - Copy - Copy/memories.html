@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Memories — For Ela ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Josefin+Sans:wght@100;200;300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* ── PAGE-SPECIFIC STYLES ── */
+    .mem-hero {
+      min-height: 60svh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 4rem 1.5rem; position: relative; z-index: 1;
+    }
+    .mem-hero h1 {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(3.5rem, 12vw, 8rem); color: var(--blush);
+      text-shadow: 0 0 60px rgba(192,65,90,.6);
+      opacity: 0; animation: fu 1.2s .3s forwards;
+    }
+    .mem-hero p {
+      font-style: italic; color: var(--soft); font-size: clamp(.9rem, 2vw, 1.15rem);
+      margin-top: 1rem; opacity: 0; animation: fu .9s .8s forwards; max-width: 500px;
+    }
+
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; z-index: 1; }
+    .timeline::before {
+      content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, var(--rose), var(--gold), var(--rose), transparent);
+      transform: translateX(-50%);
+    }
+    .tl-item {
+      display: flex; gap: 2rem; margin-bottom: 3.5rem;
+      position: relative; align-items: flex-start;
+    }
+    .tl-item:nth-child(odd) { flex-direction: row-reverse; text-align: right; }
+    .tl-item:nth-child(odd) .tl-content { align-items: flex-end; }
+    .tl-dot {
+      position: absolute; left: 50%; top: .5rem;
+      width: 2.2rem; height: 2.2rem; border-radius: 50%;
+      background: rgba(192,65,90,.15); border: 1px solid var(--rose);
+      display: flex; align-items: center; justify-content: center;
+      transform: translateX(-50%); font-size: .9rem; z-index: 2;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .tl-item:hover .tl-dot {
+      transform: translateX(-50%) scale(1.3);
+      box-shadow: 0 0 25px rgba(192,65,90,.5);
+    }
+    .tl-content {
+      flex: 1; display: flex; flex-direction: column; max-width: calc(50% - 2.5rem);
+    }
+    .tl-date {
+      font-family: 'Josefin Sans', sans-serif; font-weight: 100;
+      letter-spacing: .3em; font-size: .65rem; color: var(--gold);
+      text-transform: uppercase; margin-bottom: .5rem;
+    }
+    .tl-title {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--blush); margin-bottom: .5rem;
+    }
+    .tl-text { font-size: .95rem; color: #ddc0c8; line-height: 1.8; }
+
+    .back-link {
+      display: block; text-align: center; margin: 3rem auto;
+      font-family: 'Josefin Sans', sans-serif; font-weight: 100;
+      letter-spacing: .3em; font-size: .7rem; color: var(--muted);
+      text-transform: uppercase; text-decoration: none;
+      padding: .8rem 2rem; border: 1px solid rgba(192,65,90,.2);
+      border-radius: 4px; transition: all .3s; position: relative; z-index: 1;
+      width: fit-content;
+    }
+    .back-link:hover { border-color: var(--rose); color: var(--rose); background: rgba(192,65,90,.08); }
+
+    @media (max-width: 600px) {
+      .timeline::before { left: 1.1rem; }
+      .tl-item, .tl-item:nth-child(odd) { flex-direction: column; text-align: left; }
+      .tl-item:nth-child(odd) .tl-content { align-items: flex-start; }
+      .tl-dot { left: 1.1rem; }
+      .tl-content { max-width: 100%; padding-left: 3rem; }
+    }
+  </style>
+</head>
+<body class="page-ready">
+
+<canvas id="bgc"></canvas>
+<canvas id="fwc"></canvas>
+<div class="fhwrap" id="fhwrap"></div>
+<div id="hcur"><svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85C50 85 5 52 5 28C5 13 16 3 29 3C38 3 46 8 50 16C54 8 62 3 71 3C84 3 95 13 95 28C95 52 50 85 50 85Z" fill="#c0415a"/></svg></div>
+
+<div class="scroll-progress"><div class="scroll-progress-fill" id="scroll-progress-fill"></div><span class="scroll-heart" id="scroll-heart">♥</span></div>
+
+<div class="mem-hero">
+  <h1>Our Memories</h1>
+  <p>Every moment with you becomes a memory I want to keep forever.</p>
+</div>
+
+<div class="gline-animated rev"><span class="div-heart">♥</span></div>
+
+<div class="timeline">
+  <div class="tl-item rev">
+    <div class="tl-dot">💫</div>
+    <div class="tl-content">
+      <span class="tl-date">The beginning</span>
+      <h3 class="tl-title">When I first saw you</h3>
+      <p class="tl-text">My heart did something it had never done before. It recognised you — before my mind even had a chance to catch up.</p>
+    </div>
+  </div>
+
+  <div class="tl-item rev d1">
+    <div class="tl-dot">💬</div>
+    <div class="tl-content">
+      <span class="tl-date">Our first conversation</span>
+      <h3 class="tl-title">Words that changed everything</h3>
+      <p class="tl-text">I remember thinking: I could talk to this person forever. And here I am, still wanting to.</p>
+    </div>
+  </div>
+
+  <div class="tl-item rev d2">
+    <div class="tl-dot">😂</div>
+    <div class="tl-content">
+      <span class="tl-date">That moment</span>
+      <h3 class="tl-title">When you first laughed with me</h3>
+      <p class="tl-text">The sound of your laughter became my favourite thing. I knew right then I would spend my life trying to hear it again.</p>
+    </div>
+  </div>
+
+  <div class="tl-item rev d3">
+    <div class="tl-dot">🌙</div>
+    <div class="tl-content">
+      <span class="tl-date">Late nights</span>
+      <h3 class="tl-title">Talking until sunrise</h3>
+      <p class="tl-text">Those nights when we lost track of time, when the world was asleep and it was just us — those are the hours I treasure most.</p>
+    </div>
+  </div>
+
+  <div class="tl-item rev d1">
+    <div class="tl-dot">💕</div>
+    <div class="tl-content">
+      <span class="tl-date">The realisation</span>
+      <h3 class="tl-title">When I knew I loved you</h3>
+      <p class="tl-text">It was not one big moment. It was a thousand tiny ones that suddenly made sense all at once. And I thought: oh. It is you. It has always been you.</p>
+    </div>
+  </div>
+
+  <div class="tl-item rev d2">
+    <div class="tl-dot">🔥</div>
+    <div class="tl-content">
+      <span class="tl-date">Through everything</span>
+      <h3 class="tl-title">The hard days we survived</h3>
+      <p class="tl-text">We have been through storms. But we held on. And every hard day only proved that this love is stronger than anything.</p>
+    </div>
+  </div>
+
+  <div class="tl-item rev d3">
+    <div class="tl-dot">♥</div>
+    <div class="tl-content">
+      <span class="tl-date">Right now</span>
+      <h3 class="tl-title">This very moment</h3>
+      <p class="tl-text">I love you more today than I did yesterday. And tomorrow, I will love you even more. This is the memory we are making right now.</p>
+    </div>
+  </div>
+</div>
+
+<a href="index.html" class="back-link">← back to the letter</a>
+
+<div class="final" style="padding-top: 3rem">
+  <span class="fhearts">♥ &nbsp; ♥ &nbsp; ♥</span>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/starfield.js"></script>
+<script>
+  initHeartCursor();
+  initFireworks();
+  initStarfield();
+  initFloatingHearts();
+  initProgressBar();
+  initAnimatedDividers();
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: .07 });
+  document.querySelectorAll('.rev').forEach(el => io.observe(el));
+
+  // Animated dividers
+  const divObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate'); divObs.unobserve(e.target); } });
+  }, { threshold: .5 });
+  document.querySelectorAll('.gline-animated').forEach(d => divObs.observe(d));
+</script>
+</body>
+</html>

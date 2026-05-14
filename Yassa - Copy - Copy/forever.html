@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forever & Always — For Ela ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Josefin+Sans:wght@100;200;300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .vow-hero {
+      min-height: 60svh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 4rem 1.5rem; position: relative; z-index: 1;
+    }
+    .vow-hero h1 {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(3.5rem, 12vw, 8rem); color: var(--blush);
+      text-shadow: 0 0 60px rgba(192,65,90,.6);
+      opacity: 0; animation: fu 1.2s .3s forwards;
+    }
+    .vow-hero p {
+      font-style: italic; color: var(--soft); font-size: clamp(.9rem, 2vw, 1.15rem);
+      margin-top: 1rem; opacity: 0; animation: fu .9s .8s forwards; max-width: 500px;
+    }
+
+    .vow-section {
+      position: relative; z-index: 1; max-width: 750px;
+      margin: 0 auto; padding: 3rem clamp(1.2rem, 5vw, 3rem);
+    }
+    .vow-card {
+      background: rgba(192,65,90,.06); border: 1px solid rgba(192,65,90,.18);
+      border-radius: 8px; padding: clamp(2rem, 5vw, 3rem);
+      backdrop-filter: blur(10px); margin-bottom: 2.5rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .vow-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(192,65,90,.1);
+    }
+    .vow-num {
+      font-family: 'Pinyon Script', cursive; font-size: 3rem;
+      color: rgba(192,65,90,.2); line-height: .9; margin-bottom: .5rem;
+    }
+    .vow-title {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(1.5rem, 4vw, 2rem); color: var(--blush); margin-bottom: 1rem;
+    }
+    .vow-text {
+      font-size: clamp(.95rem, 1.6vw, 1.1rem); color: #ddc0c8;
+      line-height: 1.9; font-weight: 400;
+    }
+    .vow-text em { color: var(--blush); }
+    .vow-text strong { color: var(--soft); font-weight: 600; font-style: italic; }
+
+    .final-poem {
+      text-align: center; padding: 3rem 1.5rem;
+      position: relative; z-index: 1; max-width: 650px; margin: 0 auto;
+    }
+    .final-poem .pl { display: block; font-style: italic; color: #ddc0c8;
+      font-size: clamp(1rem, 2.2vw, 1.3rem); line-height: 2.2; font-weight: 400; }
+    .final-poem .pl.hi { color: var(--blush); font-size: clamp(1.05rem, 2.4vw, 1.4rem); }
+
+    .back-link {
+      display: block; text-align: center; margin: 3rem auto;
+      font-family: 'Josefin Sans', sans-serif; font-weight: 100;
+      letter-spacing: .3em; font-size: .7rem; color: var(--muted);
+      text-transform: uppercase; text-decoration: none;
+      padding: .8rem 2rem; border: 1px solid rgba(192,65,90,.2);
+      border-radius: 4px; transition: all .3s; position: relative; z-index: 1;
+      width: fit-content;
+    }
+    .back-link:hover { border-color: var(--rose); color: var(--rose); background: rgba(192,65,90,.08); }
+  </style>
+</head>
+<body class="page-ready">
+
+<canvas id="bgc"></canvas>
+<canvas id="fwc"></canvas>
+<div class="fhwrap" id="fhwrap"></div>
+<div id="hcur"><svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85C50 85 5 52 5 28C5 13 16 3 29 3C38 3 46 8 50 16C54 8 62 3 71 3C84 3 95 13 95 28C95 52 50 85 50 85Z" fill="#c0415a"/></svg></div>
+
+<div class="scroll-progress"><div class="scroll-progress-fill" id="scroll-progress-fill"></div><span class="scroll-heart" id="scroll-heart">♥</span></div>
+
+<div class="vow-hero">
+  <h1>Forever & Always</h1>
+  <p>These are the vows my heart makes to yours — not just today, but every single day that follows.</p>
+</div>
+
+<div class="gline-animated rev"><span class="div-heart">♥</span></div>
+
+<div class="vow-section">
+  <div class="vow-card rev">
+    <div class="vow-num">I</div>
+    <h3 class="vow-title">I vow to always choose you</h3>
+    <p class="vow-text">Not just on the easy days, when loving you feels like breathing. But on the hard days too — the days when the world is heavy and everything feels uncertain. I will <strong>choose you</strong> in every season, in every storm, in every quiet Tuesday afternoon. Because choosing you is the easiest and most important decision I will ever make.</p>
+  </div>
+
+  <div class="vow-card rev d1">
+    <div class="vow-num">II</div>
+    <h3 class="vow-title">I vow to protect your heart</h3>
+    <p class="vow-text">Your heart is the most precious thing anyone has ever trusted me with. I will <strong>guard it fiercely</strong>. I will never take it for granted, never make you doubt that you are loved, and never let a day pass without reminding you that you are my <em>everything</em>.</p>
+  </div>
+
+  <div class="vow-card rev d2">
+    <div class="vow-num">III</div>
+    <h3 class="vow-title">I vow to grow with you</h3>
+    <p class="vow-text">We are not the same people we were when this started. And that is beautiful. I promise to <strong>grow beside you</strong>, not apart from you. To learn, to change, to evolve — always hand in hand. The person I become tomorrow will love you even more than the person I am today.</p>
+  </div>
+
+  <div class="vow-card rev d3">
+    <div class="vow-num">IV</div>
+    <h3 class="vow-title">I vow to make you laugh</h3>
+    <p class="vow-text">Life can be heavy. But I promise to always be the one who <strong>lightens it for you</strong>. I will be silly when you need it, strong when you need that too, and always, always the person who makes you smile — even when the world forgets to.</p>
+  </div>
+
+  <div class="vow-card rev d1">
+    <div class="vow-num">V</div>
+    <h3 class="vow-title">I vow to love every version of you</h3>
+    <p class="vow-text">The happy you and the sad you. The confident you and the uncertain you. The dreaming you and the resting you. I do not love a version of you — <strong>I love all of you</strong>. Every mood, every moment, every chapter. You will never have to perform for my love.</p>
+  </div>
+
+  <div class="vow-card rev d2">
+    <div class="vow-num">∞</div>
+    <h3 class="vow-title">I vow to love you forever</h3>
+    <p class="vow-text">Not the kind of forever that people say carelessly. I mean the kind that lives in every glance, every touch, every morning I wake up and choose to love you again. If there is an after this life, I will <strong>find you there too</strong>. You are my forever. My always. My <em>only</em>.</p>
+  </div>
+</div>
+
+<div class="gline-animated rev"><span class="div-heart">✦</span></div>
+
+<div class="final-poem">
+  <span class="pl rev">You asked me once how long I will love you.</span>
+  <span class="pl rev d1">I did not answer right away.</span>
+  <span class="pl hi rev d2">Not because I did not know —</span>
+  <span class="pl hi rev d3">but because "forever" felt too small a word.</span>
+</div>
+
+<a href="index.html" class="back-link">← back to the letter</a>
+
+<div class="final" style="padding-top: 2rem">
+  <span class="sig rev">Yassa</span>
+  <p class="fnote rev">Yours — in this life and every one after.</p>
+  <span class="fhearts">♥ &nbsp; ♥ &nbsp; ♥</span>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/starfield.js"></script>
+<script>
+  initHeartCursor();
+  initFireworks();
+  initStarfield();
+  initFloatingHearts();
+  initProgressBar();
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: .07 });
+  document.querySelectorAll('.rev').forEach(el => io.observe(el));
+
+  const divObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate'); divObs.unobserve(e.target); } });
+  }, { threshold: .5 });
+  document.querySelectorAll('.gline-animated').forEach(d => divObs.observe(d));
+</script>
+</body>
+</html>
