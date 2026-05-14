@@ -9,7 +9,7 @@ function initLoadingScreen() {
   let progress = 0;
   const bar = loader.querySelector('.loader-bar-fill');
   const interval = setInterval(() => {
-    progress += Math.random() * 15 + 5;
+    progress += Math.random() * 5 + 2;
     if (progress >= 100) {
       progress = 100;
       clearInterval(interval);
