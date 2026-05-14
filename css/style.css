@@ -937,10 +937,11 @@ section p strong {
   left: 8%;
   right: 8%;
   bottom: 4%;
-  background: linear-gradient(to bottom, rgba(253, 208, 216, .12), rgba(192, 65, 90, .08));
-  border: 1px solid rgba(192, 65, 90, .25);
-  border-radius: 2px;
-  padding: 1.4rem 1.1rem;
+  background: linear-gradient(180deg, rgba(255, 246, 242, .98), rgba(250, 218, 225, .94));
+  border: 1px solid rgba(255, 214, 224, .8);
+  border-radius: 12px;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, .45), 0 0 28px rgba(247, 210, 218, .34);
+  padding: 1.45rem 1.25rem;
   transform: translateY(50%);
   opacity: 0;
   visibility: hidden;
@@ -956,11 +957,13 @@ section p strong {
 }
 
 .eletter p {
-  font-family: 'Pinyon Script', cursive;
-  font-size: clamp(1.05rem, 2.8vw, 1.5rem);
-  color: var(--blush);
-  line-height: 1.65;
+  font-family: 'Lora', serif;
+  font-size: clamp(1rem, 2.35vw, 1.28rem);
+  font-weight: 600;
+  color: #35111d;
+  line-height: 1.55;
   text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .55);
 }
 
 .ehint {
