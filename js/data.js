@@ -57,14 +57,14 @@ const PROMISES = [
 const MSGS = [
   'You are the reason I believe in magic ✨',
   'Every heartbeat whispers your name 💕',
-  'In a world full of people, my eyes always find you 🌹',
-  'You make ordinary days extraordinary 💫',
-  'My heart has never felt so full 💗',
-  'Loving you is the best thing I ever did 🌙',
+  'My eyes will always be locked on you 🌹',
+  'You make everything extraordinary 🌸',
+  'My heart belongs to you 💗',
+  'Loving you is the best part of my life 💘',
   'You are my favourite hello and hardest goodbye 💝',
-  'With you, I am finally home 🏡',
-  'You are every love song I never understood until now 🎵',
-  'I choose you, in every universe, every single time ✨',
+  'You are my home 🏡',
+  'You are every love song I never understood until I met you 🎵',
+  'I will always choose you, in every universe, every single time 💫',
 ];
 
 /** Favorite things about us */
