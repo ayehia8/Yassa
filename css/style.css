@@ -1670,7 +1670,9 @@ body.page-ready .hero {
 }
 
 .fav-card .cback {
+  align-items: center;
   padding: 2rem;
+  text-align: center;
 }
 
 .fav-item {

@@ -32,13 +32,13 @@ const REASONS = [
 
 /** Promise list items (HTML strings with <strong> tags) */
 const PROMISES = [
-  'I will always be your <strong>safe harbour</strong> — where there is no judgement, only arms wide open and a love that never wavers.',
-  'I will <strong>celebrate every version of you</strong> — the confident you, the quiet you, the dreaming you. All of them are deeply loved.',
-  'I will <strong>never stop chasing your smile</strong> — I will say something silly, do something ridiculous, just to hear your laugh once more.',
-  'On the days you forget your worth, I will <strong>remind you</strong> — gently, persistently, until you see yourself the way I see you.',
-  'I will <strong>hold your hand</strong> through every hard chapter — every storm, every doubt. I will never leave your side.',
-  'I will <strong>choose you every day</strong> — in every ordinary Tuesday, every rainy morning, every quiet evening when the world is still.',
-  'I promise to love you <strong>more tomorrow than I do today</strong>. And today I love you more than I have ever loved anything.',
+  'I will always be your safe space, where there is no judgement, only arms wide open and a love that never ends.',
+  'I will celebrate every version of you, the confident you, the quiet you, the dreaming you. All of them are deeply loved.',
+  'Your happiness will always be my purpose in life, I will forever do whatever it takes to make you the happiest.',
+  'On the days you forget your worth, I will remind you, gently, persistently, until you see yourself the way I see you.',
+  'I will hold your hand through every hard chapter, every storm, every doubt. I will never leave your side.',
+  'I will choose you every day, in every ordinary morning, every rainy night, every quiet evening when the world is still.',
+  'I promise to love you more tomorrow than I do today. And today I love you more than I have ever loved anything.',
 ];
 
 /** Rotating love messages for the big-heart modal */
@@ -68,9 +68,9 @@ const FAVORITES = [
 /** Dream future timeline */
 const DREAMS = [
   { icon: '🌅', text: 'Watch the sunrise together from a mountaintop, holding your hand as the sky turns gold.' },
-  { icon: '✈️', text: 'Travel the world with you — every city, every beach, every adventure side by side.' },
+  { icon: '✈️', text: 'Travel the world with you, every city, every beach, every adventure side by side.' },
   { icon: '🏡', text: 'Build a home that is filled with laughter, warmth, and a love that never fades.' },
-  { icon: '💍', text: 'Stand in front of everyone we love and promise you forever — out loud.' },
+  { icon: '💍', text: 'Stand in front of everyone we love and promise you forever, out loud.' },
   { icon: '👶', text: 'Create a family with you and watch our love grow into something even more beautiful.' },
-  { icon: '👴', text: 'Grow old with you — and still look at you the way I do right now.' },
+  { icon: '👴', text: 'Grow old with you, and still look at you the way I do right now.' },
 ];

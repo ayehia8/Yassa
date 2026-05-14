@@ -117,8 +117,6 @@ function buildFavorites() {
         </div>
         <div class="cf cback glass-card">
           <div class="card-shimmer"></div>
-          <span class="fav-icon">${f.icon}</span>
-          <h3 class="fav-title">${f.title}</h3>
           <p class="fav-text">${f.text}</p>
         </div>
       </div>`;
