@@ -289,6 +289,19 @@ body::after {
   filter: drop-shadow(0 0 35px rgba(192, 65, 90, .8));
 }
 
+.hero-date {
+  display: block;
+  margin-bottom: 1.35rem;
+  font-family: 'Lora', serif;
+  font-size: clamp(1.2rem, 3.2vw, 2rem);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--blush);
+  letter-spacing: .08em;
+  text-shadow: 0 0 18px rgba(192, 65, 90, .75), 0 0 38px rgba(216, 181, 111, .25);
+  animation: dateReveal 1.2s ease-out both, dateGlow 3.8s ease-in-out 1.2s infinite;
+}
+
 .from-label {
   font-family: 'Outfit', sans-serif;
   font-weight: 100;
@@ -484,6 +497,9 @@ section p strong {
   position: relative;
   z-index: 1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem clamp(1rem, 4vw, 3rem) 3.5rem;
 }
 
@@ -503,11 +519,15 @@ section p strong {
   border: none;
   cursor: pointer;
   padding: 0;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  line-height: 0;
 }
 
 .bhbtn svg {
+  display: block;
   width: clamp(110px, 24vw, 170px);
   height: clamp(110px, 24vw, 170px);
   filter: drop-shadow(0 0 28px rgba(192, 65, 90, .85)) drop-shadow(0 0 65px rgba(192, 65, 90, .4));
@@ -964,6 +984,34 @@ section p strong {
   line-height: 1.55;
   text-align: center;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .55);
+}
+
+@keyframes dateReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(.96);
+    filter: blur(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes dateGlow {
+  0%,
+  100% {
+    opacity: .82;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+    text-shadow: 0 0 26px rgba(247, 210, 218, .9), 0 0 48px rgba(216, 181, 111, .42);
+  }
 }
 
 .ehint {
