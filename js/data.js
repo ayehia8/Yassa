@@ -6,39 +6,27 @@
 const REASONS = [
   {
     n: '01',
-    t: 'Your smile',
-    f: 'It stops me mid-sentence and makes every room feel like sunrise.',
-    b: 'When you smile at me, the whole world goes quiet. It is the most beautiful thing I have ever seen — and it heals me every single time. ♥'
+    b: 'The way you always make me feel understood, you make me feel seen all the time.'
   },
   {
     n: '02',
-    t: 'Your kindness',
-    f: 'The way you love people — gently, generously, without condition.',
-    b: 'Your heart is so big and so warm. Witnessing you love others is one of the greatest privileges of my life. ♥'
+    b: 'Your kindness and the way you treat the people you care about.'
   },
   {
     n: '03',
-    t: 'Your laugh',
-    f: 'The real one — uncontrollable and completely unfiltered.',
-    b: 'I would do anything just to hear your laugh once more. It is my favourite sound and I will spend my whole life earning it. ♥'
+    b: 'Your smile and your laugh, these hold all the magic over me.'
   },
   {
     n: '04',
-    t: 'Your strength',
-    f: 'You face hard things with a grace that leaves me in awe.',
-    b: 'You do not even know how strong you are. Watching you rise every time fills me with a pride so deep it almost hurts. ♥'
+    b: 'The peace you bring into my life, you are simply my safest space.'
   },
   {
     n: '05',
-    t: 'How you love me',
-    f: 'Quietly, deeply, patiently — in ways I did not know I needed.',
-    b: 'You make me feel seen, safe, and chosen every single day. You love me so well I finally learned to love myself too. ♥'
+    b: 'Your strength, the way you handle hard times and responsibilities.'
   },
   {
     n: '06',
-    t: 'Simply — you',
-    f: 'Everything about you. Every version, every mood, every day.',
-    b: 'In every lifetime, across every possible world — I would find you. I would always, always choose you. ♥'
+    b: "Everything that's uniquely yours, I love every single detail about you."
   },
 ];
 

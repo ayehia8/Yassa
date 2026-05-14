@@ -707,6 +707,12 @@ section p strong {
   perspective: 1200px;
   cursor: pointer;
   height: clamp(200px, 25vw, 240px);
+  outline: none;
+}
+
+.cw.rev,
+.cw.rev.on {
+  transform: none;
 }
 
 .ci {
@@ -714,19 +720,25 @@ section p strong {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform .8s cubic-bezier(.4, .2, .2, 1);
+  transform-origin: center center;
 }
 
-.cw.flipped .ci {
-  transform: rotateY(180deg);
+.cw:focus-visible .cfront,
+.cw:focus-visible .cback {
+  box-shadow: 0 0 0 2px rgba(247, 210, 218, .75), 0 20px 80px rgba(0, 0, 0, .27);
 }
 
 .cf {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 3px;
   padding: 1.7rem;
+  transform-origin: center center;
+  transition: transform .8s cubic-bezier(.4, .2, .2, 1), opacity .35s ease;
 }
 
 .cfront {
@@ -734,7 +746,15 @@ section p strong {
   border: 1px solid rgba(192, 65, 90, .2);
   display: flex;
   flex-direction: column;
-  transition: border-color .3s, background .3s;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .3s, background .3s, transform .8s cubic-bezier(.4, .2, .2, 1), opacity .35s ease;
+  transform: rotateY(0deg);
+}
+
+.cw.flipped .cfront {
+  opacity: 0;
+  transform: rotateY(-180deg);
 }
 
 .cw:hover .cfront:not(.cw.flipped .cfront) {
@@ -745,20 +765,26 @@ section p strong {
 .cback {
   background: linear-gradient(135deg, rgba(192, 65, 90, .2), rgba(139, 26, 48, .18));
   border: 1px solid rgba(192, 65, 90, .42);
+  opacity: 0;
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-align: center;
+  text-align: left;
+}
+
+.cw.flipped .cback {
+  opacity: 1;
+  transform: rotateY(0deg);
 }
 
 .rnum {
   font-family: 'Pinyon Script', cursive;
-  font-size: 3rem;
-  color: rgba(192, 65, 90, .26);
+  font-size: clamp(5rem, 12vw, 8rem);
+  color: rgba(247, 210, 218, .72);
   line-height: 1.2;
-  margin-bottom: .4rem;
+  text-shadow: 0 0 28px rgba(192, 65, 90, .65);
 }
 
 .rtit {
@@ -802,6 +828,12 @@ section p strong {
   color: var(--blush);
   line-height: 1.72;
   font-weight: 300;
+}
+
+.rbtxt strong {
+  color: var(--cream);
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 /* ── 12. QUOTE ── */
@@ -1324,6 +1356,11 @@ section p strong {
   overflow: hidden;
   position: relative;
   border-radius: 18px;
+}
+
+.cf.glass-card {
+  position: absolute;
+  inset: 0;
 }
 
 .glass-card::before {

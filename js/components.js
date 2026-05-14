@@ -6,71 +6,41 @@
 function buildReasonCards() {
   const grid = document.getElementById('rgrid');
   const delays = ['d1', 'd2', 'd3', 'd1', 'd2', 'd3'];
-  const cardMessages = [
-    "I love this about you ❤️",
-    "So true ✨",
-    "My favourite reason 💕",
-    "You are amazing 💖",
-    "Always & forever 💗",
-    "You're the best 💝"
-  ];
 
   REASONS.forEach((r, i) => {
     const card = document.createElement('div');
     card.className = `cw rev ${delays[i]}`;
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Reveal reason ${r.n}`);
 
     card.innerHTML = `
       <div class="ci">
         <div class="cf cfront glass-card">
           <div class="card-shimmer"></div>
           <div class="rnum">${r.n}</div>
-          <div class="rtit">${r.t}</div>
-          <span class="fhint" style="margin-top:auto">tap to reveal ♡</span>
         </div>
-        <div class="cf cback glass-card" style="justify-content:center; align-items:flex-start">
+        <div class="cf cback glass-card">
           <div class="card-shimmer"></div>
-          <div class="rbtxt" style="text-align:left"><strong style="color:var(--blush);font-size:1.05rem">${r.f}</strong><br><br>${r.b}</div>
+          <div class="rbtxt">${r.b}</div>
         </div>
       </div>`;
 
-    card.addEventListener('click', (e) => {
+    const flipCard = () => {
+      card.querySelector('.ci').style.transform = '';
       card.classList.toggle('flipped');
       const rect = card.getBoundingClientRect();
       burst(rect.left + rect.width / 2, rect.top + rect.height / 2, 16);
       fw(rect.left + rect.width / 2, rect.top + rect.height / 2, 24);
+      card.setAttribute('aria-label', card.classList.contains('flipped') ? `Hide reason ${r.n}` : `Reveal reason ${r.n}`);
+    };
 
-      if (card.classList.contains('flipped')) {
-        const msg = document.createElement('div');
-        msg.className = 'floating-msg';
-        msg.textContent = cardMessages[i % cardMessages.length];
-        msg.style.left = e.clientX + 'px';
-        msg.style.top = e.clientY + 'px';
-        document.body.appendChild(msg);
+    card.addEventListener('click', flipCard);
 
-        setTimeout(() => msg.remove(), 2000);
-      }
-    });
-
-    card.addEventListener('mousemove', (e) => {
-      if (card.classList.contains('flipped')) return;
-      const rc = card.getBoundingClientRect();
-      const x = (e.clientX - rc.left) / rc.width - .5;
-      const y = (e.clientY - rc.top) / rc.height - .5;
-      card.querySelector('.ci').style.transform =
-        `perspective(1200px) rotateY(${x * 24}deg) rotateX(${-y * 16}deg)`;
-      // Move shimmer
-      const shimmer = card.querySelector('.cfront .card-shimmer');
-      if (shimmer) {
-        shimmer.style.background =
-          `radial-gradient(circle at ${(x + .5) * 100}% ${(y + .5) * 100}%, rgba(212,168,83,.15), transparent 60%)`;
-      }
-    });
-
-    card.addEventListener('mouseleave', () => {
-      if (!card.classList.contains('flipped')) {
-        card.querySelector('.ci').style.transform = '';
-        const shimmer = card.querySelector('.cfront .card-shimmer');
-        if (shimmer) shimmer.style.background = '';
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        flipCard();
       }
     });
 
